@@ -1,0 +1,19 @@
+{
+  "name": "instagram",
+  "version": "1.0.0",
+  "description": "working with instagram API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "instagram",
+    "api"
+  ],
+  "author": "Dmitry Ch",
+  "license": "ISC",
+  "dependencies": {
+    "env2": "^2.1.1",
+    "instagram-private-api": "^0.5.16"
+  }
+}
