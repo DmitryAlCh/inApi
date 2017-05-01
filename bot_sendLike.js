@@ -1,9 +1,9 @@
 require('env2')('./keys/.env');
 const _ = require('underscore');
 var Client = require('instagram-private-api').V1;
-var {Helpers} = require('instagram-private-api');
-var Request = require('instagram-private-api').V1;
-
+// var {Helpers} = require('instagram-private-api');
+// var Thread = require('./edited-node-modules');
+var LikeThread = require('./likeApi');
 const accountName = process.env.ACCOUNT_NAME;
 const botName = process.env.BOT_NAME;
 const botPass = process.env.BOT_PASSWORD;
@@ -46,8 +46,8 @@ Client.Session.create(device, storage, botName, botPass)
     .spread(function (session, user) {
         console.log('user');
         console.log(user);
-        console.log(message);
-        return Client.Thread.configureText(session, user.id, message);
+        // console.log(message);
+        return LikeThread.configureLike(session, user.id);
     }).then((res) =>{
       // console.log(res[0]._params);
     }).catch((e) =>{console.log('failure',e);});
